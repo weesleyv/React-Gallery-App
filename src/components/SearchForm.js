@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-
 class SearchForm extends Component {
 
 	handleSubmit = e => {
 		e.preventDefault();
 		this.props.onSearch(this.query.value);
+		console.log(this.props.match.params.topic);
+		const path = `/search/${this.query.value}`;
+		this.props.history.push(path);
 		e.currentTarget.reset();	
 	}
 
 	render() {
-		return(
+		return(			
 			<form className="search-form" onSubmit={this.handleSubmit}>
 		        <input 
 		        	type="search" 

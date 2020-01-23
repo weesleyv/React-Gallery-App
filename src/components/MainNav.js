@@ -1,16 +1,22 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const MainNav = () => {
-		return(
-		  <nav className="main-nav">
-	        <ul>
-	          <li><NavLink to='/cats'>Cats</NavLink></li>
-	          <li><NavLink to='/dogs'>Dogs</NavLink></li>
-	          <li><NavLink to='/sunset'>Sunset</NavLink></li>
-	        </ul>
-	      </nav>
-		)
+class MainNav extends React.Component {
+		handleClick = e => {
+			const query = e.target.innerText;
+			this.props.onSearch(query)
+		}
+		render() {
+			return(
+			  <nav className="main-nav">
+		        <ul>
+		          <li><NavLink to='/search/cats' onClick={this.handleClick}>Cats</NavLink></li>
+		          <li><NavLink to='/search/dogs' onClick={this.handleClick}>Dogs</NavLink></li>
+		          <li><NavLink to='/search/sunset' onClick={this.handleClick}>Sunset</NavLink></li>
+		        </ul>
+		      </nav>
+			)
+		}
 }
 
 export default MainNav;

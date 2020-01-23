@@ -4,6 +4,7 @@ import Photo from './Photo';
 
 const PhotoContainer = (props) => {
 		const data = props.photos;
+		const query = props.match.params.name;
 		let photos;
 		if (data.length > 0) {
 			photos = data.map( photo => 
@@ -14,7 +15,7 @@ const PhotoContainer = (props) => {
 		}
 		return(
 			<div className="photo-container">
-		        <h2>Results</h2>
+		        <h2>Results of {query}</h2>
 		        <ul>
 		        	{photos}
 		      	</ul>
