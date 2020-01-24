@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 class MainNav extends React.Component {
+	//passing performsearch() func through props and use NavLinks innertext as a param,
+	//@param{e} - event
 		handleClick = e => {
 			const query = e.target.innerText;
 			this.props.onSearch(query)

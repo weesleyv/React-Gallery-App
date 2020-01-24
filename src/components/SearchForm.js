@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 class SearchForm extends Component {
-
+	/* //passing performsearch() func through props and use input.value as a param
+	pushing path in history prop
+	@param{e} - event
+	*/
 	handleSubmit = e => {
 		e.preventDefault();
 		this.props.onSearch(this.query.value);
-		console.log(this.props.match.params.topic);
 		const path = `/search/${this.query.value}`;
 		this.props.history.push(path);
 		e.currentTarget.reset();	
