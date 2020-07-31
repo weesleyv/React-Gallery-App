@@ -3,7 +3,7 @@ import NotFound from './NotFound';
 import Photo from './Photo';
 
 const PhotoContainer = (props) => {
-	//displaying images useing data from api call
+	//displaying images using data from api call
 	//dynamically displaying header of search query
 		const data = props.photos;
 		const query = props.match.params.name;
@@ -17,7 +17,7 @@ const PhotoContainer = (props) => {
 		}
 		return(
 			<div className="photo-container">
-		        <h2>Results of "{query}"</h2>
+		        <h2>{query} images</h2>
 		        <ul>
 		        	{photos}
 		      	</ul>
