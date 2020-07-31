@@ -56,7 +56,7 @@ Set loading = false after the request completes.
             :
             <Switch>
               <Route exact path="/" render ={ () => <Redirect to="/search" /> } />
-              <Route exact path="/React-Gallery-App" render ={ () => <Redirect to="/search" /> } />
+              <Route exact path="/React-Gallery-App/" render ={ () => <Redirect to="/search" /> } />
               <Route path="/search" exact render={(props) => <PhotoContainer photos={this.state.photos} {...props}/>} />
               <Route path="/search/:name" exact render={(props) => <PhotoContainer photos={this.state.photos} {...props}/>} /> 
               <Route component={PageNotFound} />            
